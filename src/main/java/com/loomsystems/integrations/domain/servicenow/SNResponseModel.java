@@ -1,4 +1,4 @@
-package com.loomsystems.integrations.domain.incidents.servicenow;
+package com.loomsystems.integrations.domain.servicenow;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

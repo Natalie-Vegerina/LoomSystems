@@ -1,7 +1,7 @@
 package com.loomsystems.integrations.resources;
 
 
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentWebHookUpdateResponseModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentWebHookUpdateResponseModel;
 import com.loomsystems.integrations.services.IncidentService;
 
 import javax.ws.rs.*;

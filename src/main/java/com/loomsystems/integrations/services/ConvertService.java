@@ -1,10 +1,12 @@
 package com.loomsystems.integrations.services;
 
 import com.loomsystems.integrations.domain.incidents.*;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentRequestModel;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentResponseModel;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentModel;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentWebHookUpdateResponseModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentRequestModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentResponseModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentWebHookUpdateResponseModel;
+import com.loomsystems.integrations.domain.servicenow.users.SNUserResponseModel;
+import com.loomsystems.integrations.domain.users.UserResponseModel;
 
 public class ConvertService {
 
@@ -18,8 +20,6 @@ public class ConvertService {
     public SNIncidentRequestModel convert(IncidentUpdateRequestModel input) {
         SNIncidentRequestModel output = new SNIncidentRequestModel();
         map(input, output);
-        output.setOpenedBy(input.getOpenedBy());
-        output.setCallerId(input.getCallerId());
 
         return output;
     }
@@ -32,6 +32,8 @@ public class ConvertService {
         output.setId(input.getId());
         output.setUpdatedOn(input.getUpdatedOn());
         output.setAssignedTo(input.getAssignedTo().getValue());
+        output.setAssignmentGroup(input.getAssignmentGroup().getValue());
+
 
         return output;
     }
@@ -44,6 +46,7 @@ public class ConvertService {
         output.setId(input.getId());
         output.setUpdatedOn(input.getUpdatedOn());
         output.setAssignedTo(input.getAssignedTo().getValue());
+        output.setAssignmentGroup(input.getAssignmentGroup().getValue());
 
         return output;
     }
@@ -58,6 +61,7 @@ public class ConvertService {
         output.setId(input.getId());
         output.setUpdatedOn(input.getUpdatedOn());
         output.setAssignedTo(input.getAssignedTo());
+        output.setAssignmentGroup(input.getAssignmentGroup());
 
         return output;
     }
@@ -101,6 +105,30 @@ public class ConvertService {
         output.setId(input.getId());
         output.setUpdatedOn(input.getUpdatedOn());
         output.setAssignedTo(input.getAssignedTo());
+        output.setAssignmentGroup(input.getAssignmentGroup());
+
+        return output;
+    }
+
+    public UserResponseModel convert(SNUserResponseModel input) {
+        UserResponseModel output = new UserResponseModel();
+        output.setCity(input.getCity());
+        output.setDateFormat(input.getDateFormat());
+        output.setEmail(input.getEmail());
+        output.setFirstName(input.getFirstName());
+        output.setHomePhone(input.getHomePhone());
+        output.setId(input.getId());
+        output.setLastName(input.getLastName());
+        output.setMiddleName(input.getMiddleName());
+        output.setMobilePhone(input.getMobilePhone());
+        output.setName(input.getName());
+        output.setPhone(input.getPhone());
+        output.setState(input.getState());
+        output.setStreet(input.getStreet());
+        output.setTimeFormat(input.getTimeFormat());
+        output.setTimeZone(input.getTimeZone());
+        output.setUserName(input.getUserName());
+        output.setZip(input.getZip());
 
         return output;
     }
@@ -119,6 +147,9 @@ public class ConvertService {
         output.setState(input.getState());
         output.setUrgency(input.getUrgency());
         output.setAssignedTo(input.getAssignedTo());
+        output.setAssignmentGroup(input.getAssignmentGroup());
+        output.setOpenedBy(input.getOpenedBy());
+        output.setCallerId(input.getCallerId());
     }
 
 
@@ -155,6 +186,7 @@ public class ConvertService {
         output.setId(input.getId());
         output.setUpdatedOn(input.getUpdatedOn());
         output.setAssignedTo(input.getAssignedTo());
+        output.setAssignmentGroup(input.getAssignmentGroup());
     }
 
 

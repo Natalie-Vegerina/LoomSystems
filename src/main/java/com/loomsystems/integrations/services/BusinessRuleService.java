@@ -2,7 +2,7 @@ package com.loomsystems.integrations.services;
 
 import com.loomsystems.integrations.domain.BusinessRuleCreateRequestModel;
 import com.loomsystems.integrations.Config;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNResponseModel;
+import com.loomsystems.integrations.domain.servicenow.SNResponseModel;
 import org.apache.http.auth.AuthenticationException;
 
 import java.io.IOException;

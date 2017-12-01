@@ -1,4 +1,4 @@
-package com.loomsystems.integrations.domain.incidents.servicenow;
+package com.loomsystems.integrations.domain.servicenow;
 
 public class LinkObject {
     private String link;

@@ -3,9 +3,9 @@ package com.loomsystems.integrations.services;
 import com.loomsystems.integrations.DataStorage;
 import com.loomsystems.integrations.domain.enums.IncidentOperation;
 import com.loomsystems.integrations.domain.incidents.*;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentRequestModel;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentResponseModel;
-import com.loomsystems.integrations.domain.incidents.servicenow.SNIncidentWebHookUpdateResponseModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentRequestModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentResponseModel;
+import com.loomsystems.integrations.domain.servicenow.incidents.SNIncidentWebHookUpdateResponseModel;
 import org.apache.http.auth.AuthenticationException;
 
 import java.io.IOException;
@@ -21,9 +21,6 @@ public class IncidentService {
 
     public Optional<IncidentCreateResponseModel> create(IncidentCreateRequestModel request) {
         SNIncidentRequestModel snRequest = convertService.convert(request);
-        snRequest.setOpenedBy("6816f79cc0a8016401c5a33be04be441");
-        snRequest.setAssignedTo("6816f79cc0a8016401c5a33be04be441");
-        snRequest.setCallerId("a8f98bb0eb32010045e1a5115206fe3a");
 
         try {
             return requestService

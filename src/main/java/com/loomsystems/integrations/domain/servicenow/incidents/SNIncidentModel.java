@@ -1,29 +1,25 @@
-package com.loomsystems.integrations.domain.incidents;
+package com.loomsystems.integrations.domain.servicenow.incidents;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Incident {
+public class SNIncidentModel {
     private String number;
+    @JsonProperty("short_description")
     private String shortDescription;
     private String priority;
     private String severity;
-    private String id;
     private String category;
-    private String updatedOn;
-    private String openedBy;
-    private String closedBy;
     private String state;
     private String impact;
     private String active;
+    @JsonProperty("opened_at")
     private String openedAt;
-    private String closedAt;
-    private String callerId;
     private String notify;
+    @JsonProperty("incident_state")
     private String incidentState;
     private String urgency;
-    private String assignedTo;
-    private String assignmentGroup;
 }
